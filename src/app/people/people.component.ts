@@ -15,9 +15,14 @@ export class PeopleComponent implements OnInit {
 
   constructor(private peopleService: PeopleService) { }
 
+  private imgClick(email: string) {
+
+  }
+
   ngOnInit() {
+    var peopleNumber = 16;
     this.isLoading = true;
-    this.peopleService.getRandomPeople({ result: 6 })
+    this.peopleService.getRandomPeople({ result: peopleNumber })
       .pipe(finalize(() => { this.isLoading = false; }))
       .subscribe((people: People[]) => { this.people = people; });
   }
