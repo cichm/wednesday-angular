@@ -1,7 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { People } from '@app/people/People';
 import { PeopleService } from '@app/people/people.service';
 import { finalize } from 'rxjs/operators';
+import { MatDialog } from "@angular/material";
+import {PersonDataDialogComponent} from "@app/person-data-dialog/person-data-dialog.component";
+
+export interface PersonDialog {
+  person: People
+}
 
 @Component({
   selector: 'app-people',
@@ -13,14 +19,18 @@ export class PeopleComponent implements OnInit {
   people: People[];
   isLoading: boolean;
 
-  constructor(private peopleService: PeopleService) { }
+  constructor(private peopleService: PeopleService, public dialog: MatDialog) { }
 
-  private imgClick(email: string) {
-
+  personDialog(email: string): void {
+    this.dialog.open(PersonDataDialogComponent, {
+      data: {
+        person: this.people.filter(p => p.email == email)[0]
+      }
+    });
   }
 
   ngOnInit() {
-    var peopleNumber = 16;
+    const peopleNumber = 16;
     this.isLoading = true;
     this.peopleService.getRandomPeople({ result: peopleNumber })
       .pipe(finalize(() => { this.isLoading = false; }))
