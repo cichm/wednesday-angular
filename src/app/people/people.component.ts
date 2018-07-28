@@ -1,13 +1,9 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { People } from '@app/people/People';
 import { PeopleService } from '@app/people/people.service';
 import { finalize } from 'rxjs/operators';
 import { MatDialog } from "@angular/material";
-import {PersonDataDialogComponent} from "@app/person-data-dialog/person-data-dialog.component";
-
-export interface PersonDialog {
-  person: People
-}
+import { PersonDataDialogComponent } from "@app/person-data-dialog/person-data-dialog.component";
 
 @Component({
   selector: 'app-people',
