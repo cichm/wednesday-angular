@@ -14,6 +14,8 @@ export class PeopleComponent implements OnInit {
 
   people: People[];
   isLoading: boolean;
+  woman: any;
+  man: any;
 
   constructor(private peopleService: PeopleService, public dialog: MatDialog) { }
 
@@ -27,9 +29,14 @@ export class PeopleComponent implements OnInit {
 
   ngOnInit() {
     const peopleNumber = 16;
+
     this.isLoading = true;
     this.peopleService.getRandomPeople({ result: peopleNumber })
       .pipe(finalize(() => { this.isLoading = false; }))
-      .subscribe((people: People[]) => { this.people = people; });
+      .subscribe((people: People[]) => {
+        this.people = people;
+        this.woman = people.filter((person) => person.gender == "female");
+        this.man = people.filter((person) => person.gender == "male")
+      });
   }
 }

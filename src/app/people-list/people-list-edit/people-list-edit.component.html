@@ -1,0 +1,18 @@
+<form [formGroup]="heroForm" (ngSubmit)="onHeroFormSubmit()">
+  <input type="hidden" formControlName="id">
+  <div class="form-group">
+    <label for="first">First Name</label>
+    <input type="text" class="form-control" id="first" placeholder="Firstname" formControlName="first">
+  </div>
+  <div class="form-group">
+    <label for="real">Real Name</label>
+    <input type="text" class="form-control" id="real" placeholder="Real Name" formControlName="real">
+  </div>
+  <div class="form-group">
+    <label for="first">First Appearance</label>
+    <div class="input-group">
+      <input type="text" class="form-control" id="first" placeholder="First Appearance" formControlName="first">
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Save</button>
+</form>

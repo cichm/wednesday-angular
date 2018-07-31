@@ -7,13 +7,19 @@ import { PeopleComponent } from './people.component';
 import { MaterialModule } from '@app/material.module';
 import { PeopleService } from '@app/people/people.service';
 import { PersonDataDialogComponent } from "@app/person-data-dialog/person-data-dialog.component";
+import { BrowserModule } from "@angular/platform-browser";
+import { PeopleTabsModule } from "@app/people-tabs/people-tabs.module";
+import { PeopleListModule } from "@app/people-list/people-list.module";
 
 @NgModule({
   imports: [
     CommonModule,
     PeopleRoutingModule,
     MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    BrowserModule,
+    PeopleTabsModule,
+    PeopleListModule
   ],
   declarations: [
     PeopleComponent,

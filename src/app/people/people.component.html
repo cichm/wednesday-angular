@@ -1,5 +1,16 @@
 <div class="container">
   <mat-card>
+    <app-people-tabs>
+      <app-people-tab tabTitle="Woman">
+        <h1>Women</h1>
+        <app-woman-list [people]="woman"></app-woman-list>
+      </app-people-tab>
+      <app-people-tab tabTitle="Man">
+        <h1>Men</h1>
+        <app-men-list [people]="man"></app-men-list>
+      </app-people-tab>
+    </app-people-tabs>
+
     <mat-grid-list cols="4" rowHeight="4:1" [hidden]="isLoading">
       <mat-grid-tile *ngFor="let person of people">
         <img class={{person.gender}} (click)="personDialog(person.email)" [src]="person.picture.large" />

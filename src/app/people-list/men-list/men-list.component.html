@@ -1,0 +1,18 @@
+<table class="table table-striped">
+  <thead>
+  <th>Name</th>
+  <th>Real Name</th>
+  <th>First Appearance</th>
+  <th></th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let h of people">
+    <td>{{ h.email }}</td>
+    <td>{{ h.gender }}</td>
+    <td>
+      <button class="btn btn-sm btn-default" (click)="editHero.emit()">Edit</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<button class="btn btn-default" (click)="addHero.emit()">Add new person</button>
