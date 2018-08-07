@@ -16,5 +16,20 @@
         <img class={{person.gender}} (click)="personDialog(person.email)" [src]="person.picture.large" />
       </mat-grid-tile>
     </mat-grid-list>
+
+
+    <div class="input-field">
+      <mat-form-field appearance="legacy">
+        <mat-label>Legacy form field</mat-label>
+        <input matInput placeholder="Placeholder" #input (keydown.enter)="add(input)">
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        <mat-hint>Hint</mat-hint>
+      </mat-form-field>
+    </div>
+
+    <app-todos-filters (update)="changeFilter($event)" [filters]="filters" [active]="activeFilter$ | async">
+    </app-todos-filters>
+
+    <app-todos [todos]="todos$ | async" (delete)="delete($event)" (complete)="complete($event)"></app-todos>
   </mat-card>
 </div>

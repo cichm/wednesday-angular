@@ -10,6 +10,8 @@ import { PersonDataDialogComponent } from "@app/person-data-dialog/person-data-d
 import { BrowserModule } from "@angular/platform-browser";
 import { PeopleTabsModule } from "@app/people-tabs/people-tabs.module";
 import { PeopleListModule } from "@app/people-list/people-list.module";
+import { ReactiveFormsModule } from "@angular/forms";
+import { TodosModule } from "@app/todos/todos.module";
 
 @NgModule({
   imports: [
@@ -19,7 +21,9 @@ import { PeopleListModule } from "@app/people-list/people-list.module";
     FlexLayoutModule,
     BrowserModule,
     PeopleTabsModule,
-    PeopleListModule
+    PeopleListModule,
+    ReactiveFormsModule,
+    TodosModule
   ],
   declarations: [
     PeopleComponent,
