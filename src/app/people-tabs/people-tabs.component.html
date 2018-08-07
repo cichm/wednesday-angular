@@ -1,6 +1,6 @@
 <ul class="nav nav-tabs">
-  <li *ngFor="let tab of tabs" (click)="selectTab(tab)" [class.active]="tab.active">
-    <a href="people#">{{tab.tabTitle}}</a>
-  </li>
+  <mat-button-toggle-group *ngFor="let tab of tabs" (click)="selectTab(tab)" [class.active]="tab.active">
+    <mat-button-toggle href="people#" value="bold">{{tab.tabTitle}}</mat-button-toggle>
+  </mat-button-toggle-group>
 </ul>
 <ng-content></ng-content>

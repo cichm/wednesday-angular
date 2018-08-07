@@ -2,11 +2,11 @@
   <mat-card>
     <app-people-tabs>
       <app-people-tab tabTitle="Woman">
-        <h1>Women</h1>
+        <p>Woman</p>
         <app-woman-list [people]="woman"></app-woman-list>
       </app-people-tab>
       <app-people-tab tabTitle="Man">
-        <h1>Men</h1>
+        <p>Men</p>
         <app-men-list [people]="man"></app-men-list>
       </app-people-tab>
     </app-people-tabs>
@@ -16,7 +16,6 @@
         <img class={{person.gender}} (click)="personDialog(person.email)" [src]="person.picture.large" />
       </mat-grid-tile>
     </mat-grid-list>
-
 
     <div class="input-field">
       <mat-form-field appearance="legacy">

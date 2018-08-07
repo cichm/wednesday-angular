@@ -2,11 +2,7 @@ import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-people-tab',
-  template: `
-    <div [hidden]="!active" class="pane">
-      <ng-content></ng-content>
-    </div>
-  `,
+  templateUrl: 'people-tab.component.html',
   styleUrls: ['./people-tab.component.scss']
 })
 export class PeopleTabComponent {
